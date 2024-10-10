@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário do edu</title>
+</head>
+<body>
+  <h2>Formulário</h2>
+  
+  <form id="myForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required minlength="2" maxlength="50"><br><br>
+    
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required minlength="11" maxlength="11"><br><br>
+    
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" disabled=""><br><br>
+    
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado" required>
+      <option value="">Selecione</option>
+      <option value="SP">São Paulo</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="MG">Minas Gerais</option>
+    </select><br><br>
+    
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
+    
+    <input type="button" value="Armazenar" onclick="armazenarDados()">
+    <input type="button" value="Exibir" onclick="exibirDados()">
+  </form>
+
+  <script>
+    var matriz = []; // Matriz para armazenar os dados
+
+    function armazenarDados() {
+      var form = document.getElementById("myForm");
+      var dados = {
+        nome: form.nome.value,
+        cpf: form.cpf.value,
+        cidade: form.cidade.value,
+        estado: form.estado.value,
+        dataNascimento: form.dataNascimento.value
+      };
+      matriz.push(dados);
+      form.reset();
+    }
+
+    function exibirDados() {
+      var output = "";
+      for (var i = 0; i < matriz.length; i++) {
+        output += "Nome: " + matriz[i].nome + "<br>";
+        output += "CPF: " + matriz[i].cpf + "<br>";
+        output += "Cidade: " + matriz[i].cidade + "<br>";
+        output += "Estado: " + matriz[i].estado + "<br>";
+        output += "Data de Nascimento: " + matriz[i].dataNascimento + "<br><br>";
+      }
+      document.getElementById("dataOutput").innerHTML = output;
+    }
+  </script>
+
+  <h2>Dados Armazenados:</h2>
+  <div id="dataOutput"></div>
+</body>
+</html>

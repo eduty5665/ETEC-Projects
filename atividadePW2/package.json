@@ -1,0 +1,31 @@
+{
+  "name": "atv_pw2",
+  "version": "1.0.0",
+  "description": "Atividade de CRUD --Programação Web 2-- ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduty5665/atividadePW2"
+  },
+  "keywords": [
+    "pw2",
+    "bd"
+  ],
+  "author": "Eduardo Lucas Lemes Januário",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduty5665/atividadePW2/issues"
+  },
+  "homepage": "https://github.com/eduty5665/atividadePW2/blob/main/README.md",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
